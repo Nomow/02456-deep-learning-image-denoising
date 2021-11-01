@@ -38,7 +38,7 @@ class Cifar10AutoEncoderDataset(Dataset):
     def __init__(self, imgs, transform = None):
         """  Full court dataset class for training smp models
         Args:
-            img_path (str): path to the image folder
+            imgs (np.array(N, h, w, c): images, (N is number of images)
             transform (albumentations.Compose): augmentation transforms to apply to images
         """
 
