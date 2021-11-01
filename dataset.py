@@ -6,10 +6,11 @@ import cv2
 
 class AutoEncoderDataset(Dataset):    
     def __init__(self, img_path, preprocess_transforms = None, aug_transforms = None):
-        """  Full court dataset class for training smp models
+        """  Image dataset class
         Args:
-            img_path (str): path to the image folder
-            transform (albumentations.Compose): augmentation transforms to apply to images
+            imgs (np.array(N, h, w, c): images, (N is number of images)
+            preprocess_transforms (albumentations.Compose): preprocess transforms
+            aug_transforms (albumentations.Compose): augmentation transforms
         """
 
         self.aug_transforms = aug_transforms
@@ -41,10 +42,11 @@ class AutoEncoderDataset(Dataset):
     
 class Cifar10AutoEncoderDataset(Dataset):    
     def __init__(self, imgs, preprocess_transforms = None, aug_transforms = None):
-        """  Full court dataset class for training smp models
+        """  Cifar10 Dataset class
         Args:
             imgs (np.array(N, h, w, c): images, (N is number of images)
-            transform (albumentations.Compose): augmentation transforms to apply to images
+            preprocess_transforms (albumentations.Compose): preprocess transforms
+            aug_transforms (albumentations.Compose): augmentation transforms
         """
 
         self.aug_transforms = aug_transforms
