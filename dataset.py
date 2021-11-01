@@ -31,7 +31,7 @@ class AutoEncoderDataset(Dataset):
             sample = self.transform(image=img_out)
             img_out = sample['image']
             
-        return img_out, img_in
+        return img_in, img_out
     
     
 class Cifar10AutoEncoderDataset(Dataset):    
@@ -56,4 +56,4 @@ class Cifar10AutoEncoderDataset(Dataset):
             sample = self.transform(image=img_out)
             img_out = sample['image']
             
-        return img_out, img_in
+        return img_in, img_out
