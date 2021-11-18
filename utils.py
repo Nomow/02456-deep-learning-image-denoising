@@ -82,10 +82,6 @@ def val(net, criterion, data_loader, device):
       outputs = net(inputs)
       loss = criterion(outputs, labels)
       total_loss += loss.item() * outputs.shape[0]
-      _, predicted = torch.max(outputs.data, 1)
-      correct += (predicted == labels).sum().item()
-
-
     loss = total_loss / len(data_loader.dataset)
-    accuracy = correct / len(data_loader.dataset)
-  return loss, accuracy
+
+  return loss
